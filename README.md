@@ -15,4 +15,4 @@ Fazer uma aplicação que envie uma mensagem através da rede ethernet usando um
     BCC é igual a operação ou-exclusivo de todos os bytes do frame do STX até o ETX.
 
 
-              ![My Image](../image/protocol.jpg)
+              <img src="../image/protocol.jpg" alt="Alt text" title="protocol">
