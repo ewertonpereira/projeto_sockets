@@ -8,21 +8,18 @@ HOST = 'localhost'
 PORT = 50000
 
 client.connect((HOST, PORT))
+
 print('Conectado\n')
-
-
 
 message = (input('Digite sua mensagem: '))
 data = bytearray('\2' + message + '\3', 'utf-8')
 
 
-checksum = 0
-
+sum = 0
 for element in message.encode():
-    checksum ^= element
+    sum ^= element
 
-
-data.append(checksum)
+data.append(sum)
 
 client.sendall(data)
 
