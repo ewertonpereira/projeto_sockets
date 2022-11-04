@@ -10,15 +10,18 @@ PORT = 50000
 client.connect((HOST, PORT))
 print('Conectado\n')
 
-data_client = str.encode(input('Digite sua mensagem: '))
-data = bytearray('2', 'utf-8')
+
+
+message = (input('Digite sua mensagem: '))
+data = bytearray('\2' + message + '\3', 'utf-8')
+
+
 checksum = 0
 
-for element in data_client:
+for element in message.encode():
     checksum ^= element
 
-data.extend(data_client)
-data.extend(bytearray('3', 'utf-8'))
+
 data.append(checksum)
 
 client.sendall(data)
