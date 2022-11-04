@@ -6,6 +6,7 @@ PORT = 50000
 
 # TCP protocol
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+print('Aguardando conexão de um cliente...')
 
 try:
     server.bind((HOST, PORT))
@@ -18,7 +19,7 @@ server.listen()
 # receive conection/address from cliente
 conection, address = server.accept()
 
-print('Aguardando conexão de um cliente...')
+
 print(f'Conectado em {address}')
 
 checksum = 0
