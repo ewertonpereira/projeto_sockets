@@ -23,7 +23,7 @@ Esse protocolo faz a validação de um bytearray, através de um `STX` (start-te
 
 ![](image/protocol.jpg)
    
-A validação é realizada pelo `BCC` (binary cycle check), onde em cada byte do bytrarray é realizado um `XOR` do header, 
+A validação é realizada pelo `BCC` (binary cycle check), onde em cada byte do byterarray é realizado um `XOR` do header, 
 mensagem e footer, assim agrupando a sum junto a mensagem.
 
 ![](image/sum.jpg)
@@ -39,7 +39,7 @@ Após conectado criaremos um loop que irá aguardar a mensagem do cliente.
 
 ![](image/data.jpg)
 
-Chegou a hora de realizar o checksum, onde em cada byte do bytrarray é realizado um `XOR` do header, 
+Chegou a hora de realizar o checksum, onde em cada byte do byterarray é realizado um `XOR` do header, 
 mensagem e footer. O resultado deste cálculo será comparado com o resultado do mesmo cálculo realizado do lado do cliente (chamado de key neste algoritmo). Se os resultados forem diferentes a conexão será fechada, caso contrário, será enviada uma mensagem de confirmação para o cliente.
 
 ![](image/checksum.jpg)
