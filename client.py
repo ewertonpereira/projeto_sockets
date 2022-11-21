@@ -16,8 +16,9 @@ data = bytearray('\2' + message + '\3', 'utf-8')
 
 
 sum = 0
-for element in message.encode():
+for element in data:
     sum ^= element
+    
 
 data.append(sum)
 
