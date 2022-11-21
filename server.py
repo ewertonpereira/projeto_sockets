@@ -34,7 +34,7 @@ while True:
 
     data = bytearray(data_server)
 
-    for element in data[index:]:
+    for element in data[:index]:
         checksum ^= element
 
 
