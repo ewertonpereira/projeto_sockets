@@ -1,6 +1,7 @@
 import socket
 from sys import exit
 
+
 HOST = 'localhost'
 PORT = 50000
 
@@ -33,7 +34,7 @@ while True:
         break
 
     data = bytearray(data_server)
-
+    
     for element in data[:index]:
         checksum ^= element
 
